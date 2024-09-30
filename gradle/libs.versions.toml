@@ -1,0 +1,65 @@
+[versions]
+agp = "8.4.1"
+kotlin = "1.9.0"
+coreKtx = "1.13.1"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+lifecycleRuntimeKtx = "2.8.4"
+activityCompose = "1.9.1"
+composeBom = "2023.08.00"
+retrofit = "2.9.0"
+okhttp = "4.9.0"
+timber = "4.7.1"
+coroutines = "1.4.3"
+lifecycle = "2.3.1"
+coil = "1.1.1"
+accompanist = "0.7.0"
+compose-version = "1.5.1"
+hilt = "2.33-beta"
+hilt-androidx = "1.0.0-alpha03"
+hilt-compiler = "1.0.0-beta01"
+palette = "28.0.0"
+dagger-hilt ="2.51.1"
+hilt-compose = "1.2.0"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose-version" }
+androidx-compose-material = { module = "androidx.compose.material:material", version.ref = "compose-version" }
+androidx-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose-version" }
+
+androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
+dagger-hilt-android = {module ="com.google.dagger:hilt-android", version.ref = "dagger-hilt"}
+dagger-hilt-compiler = {module = "com.google.dagger:hilt-android-compiler", version.ref = "dagger-hilt"}
+dagger-hilt-compose  = {module = "androidx.hilt:hilt-navigation-compose", version.ref = "hilt-compose"}
+timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+androidx-lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+coil = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
+accompanist-coil = { group = "com.google.accompanist", name = "accompanist-coil", version.ref = "accompanist" }
+palette = { group = "com.android.support", name = "palette-v7", version.ref = "palette" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "dagger-hilt" }
+org-jetbrains-kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
