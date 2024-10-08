@@ -11,19 +11,19 @@ composeBom = "2023.08.00"
 retrofit = "2.9.0"
 okhttp = "4.9.0"
 timber = "4.7.1"
-coroutines = "1.4.3"
+coroutines = "1.7.3"
 lifecycle = "2.3.1"
-coil = "1.1.1"
-accompanist = "0.7.0"
-compose-version = "1.5.1"
-hilt = "2.33-beta"
-hilt-androidx = "1.0.0-alpha03"
-hilt-compiler = "1.0.0-beta01"
-palette = "28.0.0"
+compose-version = "1.5.3"
+desugarJdkLibs = "2.0.3"
+palette = "1.0.0"
 dagger-hilt ="2.51.1"
 hilt-compose = "1.2.0"
-
+coil-compose = "2.2.2"
+compose-animation = "1.5.3"
 [libraries]
+coreLibraryDesugaring = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugarJdkLibs" }
+coil = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil-compose" }
+
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -40,8 +40,9 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose-version" }
 androidx-compose-material = { module = "androidx.compose.material:material", version.ref = "compose-version" }
 androidx-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose-version" }
-
+composeFoundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "compose-version" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+composeanimation = { group = "androidx.compose.animation", name = "animation", version.ref = "compose-animation" }
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
 okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
@@ -54,10 +55,7 @@ kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-cor
 kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
 androidx-lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
 androidx-lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
-coil = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
-accompanist-coil = { group = "com.google.accompanist", name = "accompanist-coil", version.ref = "accompanist" }
 palette = { group = "com.android.support", name = "palette-v7", version.ref = "palette" }
-
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

@@ -3,11 +3,13 @@ package com.example.pokeman.pokemonlist
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
-import android.support.v7.graphics.Palette
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.capitalize
+import androidx.compose.ui.text.intl.Locale
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.palette.graphics.Palette
 import com.example.pokeman.data.models.PokedexListEntry
 import com.example.pokeman.repository.pokemonRepository
 import com.example.pokeman.util.Constants.PAGE_SIZE
@@ -27,6 +29,10 @@ class PokemonListViewModel @Inject constructor(
     var isLoading= mutableStateOf(false)
     var endReached= mutableStateOf(false)
 
+    init {
+        loadPokemonPaginated()
+    }
+
   fun loadPokemonPaginated() {
       viewModelScope.launch {
           isLoading.value=true
@@ -45,12 +51,17 @@ class PokemonListViewModel @Inject constructor(
                       else{
                           entry.url.takeLastWhile { it.isDigit() }
                       }
-
-
+                   val url = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${number}.png"
+                    PokedexListEntry(entry.name.capitalize(java.util.Locale.ROOT),url ,number.toInt())
                   }
+                  curPage++
+                  loadError.value = ""
+                  isLoading.value = false
+                  pokemonList.value+=pokedexEntries
               }
               is Resource.Error ->{
-
+                  loadError.value=result.message!!
+                  isLoading.value = false
               }
 
 
