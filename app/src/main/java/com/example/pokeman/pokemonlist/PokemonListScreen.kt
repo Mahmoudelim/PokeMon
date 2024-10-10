@@ -60,7 +60,8 @@ import com.example.pokeman.ui.theme.RobotoCondensed
 
 @Composable
 fun PokemonListScreen(
-    navController: NavController
+    navController: NavController ,
+    viewModel: PokemonListViewModel = hiltViewModel()
 ){
 
     Surface(
@@ -82,7 +83,7 @@ fun PokemonListScreen(
 
             )
             {
-
+             viewModel.searchPokemon(it)
             }
            Spacer(modifier = Modifier.height(16.dp))
            PokemonList(navController = navController)
@@ -121,7 +122,7 @@ var isHintDisplayed by remember {
                 .background(color = Color.White, CircleShape)
                 .padding(horizontal = 20.dp, vertical = 12.dp)
                 .onFocusChanged { focusState ->
-                    isHintDisplayed = !focusState.isFocused
+                    isHintDisplayed = !focusState.isFocused && text.isNotEmpty()
                 }
 
 
@@ -157,6 +158,9 @@ fun PokemonList(
     val isLoading by remember {
         viewModel.isLoading
     }
+    val isSearching by remember {
+        viewModel.isSearching
+    }
 
     LazyColumn (contentPadding = PaddingValues(16.dp))  {
         val itemCount= if (pokemonList.size % 2 == 0) {
@@ -167,7 +171,7 @@ fun PokemonList(
         }
         items(itemCount)
         {
-            if (it >= itemCount - 1 && !endReached)
+            if (it >= itemCount - 1 && !endReached && !isLoading && !isSearching)
             {
                 viewModel.loadPokemonPaginated()
             }
